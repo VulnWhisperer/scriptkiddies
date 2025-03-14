@@ -1,4 +1,4 @@
-# scriptkiddies
+# simple port scanner
 for testing purposes only
 
 To run this script:
