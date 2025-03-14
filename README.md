@@ -18,4 +18,4 @@ To run this script:
     2) Save the Python script to a file, for example, resolve_hostnames.py.
     3) Run the script using Python:
     python resolve_hostnames.py
-    The script will read the hostnames from hostnames.txt, resolve each one to an IP address, and print the results.
+    The script will read the hostnames from hostnames.txt, resolve each one to an IP address, print the results to the console, and write the results to a new file named resolved_hostnames.txt.
