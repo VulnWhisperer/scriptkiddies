@@ -12,13 +12,24 @@ def read_hostnames_from_file(file_path):
         hostnames = file.readlines()
     return [hostname.strip() for hostname in hostnames]
 
+def write_results_to_file(file_path, results):
+    with open(file_path, 'w') as file:
+        for hostname, ip_address in results:
+            file.write(f"The IP address of {hostname} is {ip_address}\n")
+
 def main():
-    file_path = 'hostnames.txt'  # Path to the file containing hostnames
-    hostnames = read_hostnames_from_file(file_path)
+    input_file_path = 'hostnames.txt'  # Path to the file containing hostnames
+    output_file_path = 'resolved_hostnames.txt'  # Path to the file where results will be saved
+
+    hostnames = read_hostnames_from_file(input_file_path)
+    results = []
 
     for hostname in hostnames:
         ip_address = resolve_hostname(hostname)
         print(f"The IP address of {hostname} is {ip_address}.")
+        results.append((hostname, ip_address))
+
+    write_results_to_file(output_file_path, results)
 
 if __name__ == "__main__":
     main()
